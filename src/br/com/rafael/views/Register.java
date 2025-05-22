@@ -51,8 +51,12 @@ public class Register {
 				String email = userEmailTextField.getText();
 				String userPassword = userPasswordTextField.getText();
 				
+				Dashboard dashboard = new Dashboard();
+				dashboard.sceneDashboard(userName, email);
+				
 				System.out.printf("Usuário: %s\nE-mail:%s\nSenha: %s", userName, email, userPassword);
 				
+				frame.setVisible(false);
 			}
 		});
 		
@@ -75,7 +79,7 @@ public class Register {
 	protected final class WindowListener extends WindowAdapter {
 		public void windowClosing(WindowEvent e) {
 			System.exit(0);
+		}
 	}
-}
 
 }
