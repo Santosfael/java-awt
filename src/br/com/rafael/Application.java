@@ -1,13 +1,12 @@
 package br.com.rafael;
 
-import br.com.rafael.views.Login;
+import br.com.rafael.views.Welcome;
 
 public class Application {
 
 	public static void main(String[] args) {
-		Login login = new Login();
-		login.sceneLogin();
-
+		Welcome welcome = new Welcome();
+		welcome.sceneWelcome();
 	}
 
 }
