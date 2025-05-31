@@ -15,6 +15,7 @@ public class Login {
 	
 	public void sceneLogin() {
 		Frame frame = new Frame();
+		frame.setTitle("Login");
 		
 		Label userNameLabel = new Label("Usuário:");
 		userNameLabel.setBounds(50, 50, 100, 30);
@@ -39,6 +40,9 @@ public class Login {
 				String userPassword = userPasswordTextField.getText();
 				
 				System.out.printf("Usuário: %s\nSenha: %s", userName, userPassword);
+				Dashboard dashboard = new Dashboard();
+				dashboard.sceneDashboard(userName);
+				frame.setVisible(false);
 				
 			}
 		});

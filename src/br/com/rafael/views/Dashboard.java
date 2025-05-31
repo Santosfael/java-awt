@@ -11,25 +11,21 @@ public class Dashboard {
 	public Dashboard() {
 	}
 	
-	public void sceneDashboard(String userName, String email) {
+	public void sceneDashboard(String userName) {
 		Frame frame = new Frame();
 		
 		frame.setTitle("Dashboard");
 		Label titleLabel = new Label("Dashboard");
 		titleLabel.setFont(new Font("Arial", Font.BOLD, 20));
-		titleLabel.setBounds(50, 50, 200, 30);
+		titleLabel.setBounds(50, 50, 250, 30);
 		
 		Label userNameLabel = new Label(userName);
 		userNameLabel.setBounds(50, titleLabel.getLocation().y + 60, 200, 30);
-		
-		Label userEmailLabel = new Label(email);
-		userEmailLabel.setBounds(50, userNameLabel.getLocation().y + 50, 200, 30);
 		
 		frame.addWindowListener(new WindowListener());
 		
 		frame.add(titleLabel);
 		frame.add(userNameLabel);
-		frame.add(userEmailLabel);
 
 		
 		frame.setLayout(null);

@@ -52,7 +52,7 @@ public class Register {
 				String userPassword = userPasswordTextField.getText();
 				
 				Dashboard dashboard = new Dashboard();
-				dashboard.sceneDashboard(userName, email);
+				dashboard.sceneDashboard(userName);
 				
 				System.out.printf("Usuário: %s\nE-mail:%s\nSenha: %s", userName, email, userPassword);
 				
