@@ -1,10 +1,15 @@
 package br.com.rafael.views;
 
+import java.awt.BorderLayout;
 import java.awt.Font;
-import java.awt.Frame;
+import java.awt.GridLayout;
 import java.awt.Label;
+import java.awt.Panel;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+
+import javax.swing.JFrame;
+import javax.swing.JTable;
 
 public class Dashboard {
 	
@@ -12,25 +17,28 @@ public class Dashboard {
 	}
 	
 	public void sceneDashboard(String userName) {
-		Frame frame = new Frame();
+		JFrame frame = new JFrame("Dashboard");
+		frame.setSize(600, 400);
+		frame.setLayout(new BorderLayout());
 		
-		frame.setTitle("Dashboard");
-		Label titleLabel = new Label("Dashboard");
+		Panel panel = new Panel(new GridLayout(2, 1));
+		Label titleLabel = new Label("Dashboard", Label.CENTER);
 		titleLabel.setFont(new Font("Arial", Font.BOLD, 20));
-		titleLabel.setBounds(50, 50, 250, 30);
 		
-		Label userNameLabel = new Label(userName);
-		userNameLabel.setBounds(50, titleLabel.getLocation().y + 60, 200, 30);
+		Label userNameLabel = new Label("Usuário: " + userName, Label.CENTER);
+		panel.add(titleLabel);
+		panel.add(userNameLabel);
 		
-		frame.addWindowListener(new WindowListener());
+		String[][] data = {
+				{"Alice", "alice@email.com", "12334"},
+				{"Bob", "bob@email.com", "12334"},
+				{"Carol", "carol@email.com", "12334"},
+		};
 		
-		frame.add(titleLabel);
-		frame.add(userNameLabel);
-
+		String[] columns = {"Nome", "E-mail", "Senha"};
 		
-		frame.setLayout(null);
-		frame.setBounds(400, 400, 600, 400);
-		frame.setVisible(true);
+		JTable table = new JTable(data, columns);
+		table.setFillsViewportHeight(true);
 	}
 	
 	protected final class WindowListener extends WindowAdapter {
